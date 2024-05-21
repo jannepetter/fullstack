@@ -58,7 +58,11 @@ const App = () => {
             setPhone('')
             notifyUser(`Updated ${response.data.name}`)
         }).catch(error=>{
-          notifyUser(`Information of ${newPerson.name} has already been removed from server`,'error')
+          if (error?.response?.data[0].name === 'ValidatorError'){
+            notifyUser(`Person validation failed:${error.response.data[0]['field']}: ${error.response.data[0]['msg']}`,'error')
+          }else{
+            notifyUser('Could not update user. Something happened','error')
+          }
         })
       }
     }else{
@@ -69,7 +73,11 @@ const App = () => {
           setPhone('')
           notifyUser(`Added ${response.data.name}`)
       }).catch(error=>{
-        notifyUser('Could not add user. Something happened','error')
+        if (error?.response?.data[0].name === 'ValidatorError'){
+          notifyUser(`Person validation failed:${error.response.data[0]['field']}: ${error.response.data[0]['msg']}`,'error')
+        }else{
+          notifyUser('Could not add user. Something happened','error')
+        }
       })
     }
   }
