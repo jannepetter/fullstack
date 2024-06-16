@@ -1,0 +1,40 @@
+.error {
+  color: red;
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.blog-item {
+  border: solid 1px;
+  padding: 5px;
+  margin: 3px;
+}
+
+.menubar {
+  background-color: rgb(177, 183, 189);
+}
+
+.margin5 {
+  margin: 5px;
+}
+
+.padding5 {
+  padding: 5px;
+}
+.textCenter {
+  text-align: center;
+}
